@@ -15,27 +15,27 @@ export default {
             color: 'rgb(var(--slate-200))',
             h1: {
               fontFamily: '"Noto Serif", serif',
-              fontWeight: '180',
+              fontWeight: '100',
               color: 'rgb(var(--slate-100))',
             },
             h2: {
               fontFamily: '"Noto Serif", serif',
-              fontWeight: '180',
+              fontWeight: '100',
               color: 'rgb(var(--slate-100))',
             },
             h3: {
               fontFamily: '"Noto Serif", serif',
-              fontWeight: '180',
+              fontWeight: '100',
               color: 'rgb(var(--slate-100))',
             },
             p: {
               fontFamily: 'Sono, monospace',
-              fontWeight: '300',
+              fontWeight: '100',
               color: 'rgb(var(--slate-300))',
             },
             li: {
               fontFamily: 'Sono, monospace',
-              fontWeight: '300',
+              fontWeight: '100',
               color: 'rgb(var(--slate-300))',
             },
             a: {

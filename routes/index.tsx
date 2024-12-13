@@ -13,10 +13,11 @@ export default function Home() {
         <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div class="space-y-12">
             <section class="text-center">
-              <h1 class="text-4xl font-bold text-slate-100 sm:text-5xl font-display">
-I'm Josh              </h1>
-              <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto font-sans font-medium">
-                Data scientist, consultant, and product strategist with a strong foundation in economics.
+              <h1 class=" font-bold text-slate-100 sm:text-4xl font-display">
+                  I'm Josh
+              </h1>
+              <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto font-sans">
+                Co-Founder of Columns. <p>We're building an app for simple data analysis.</p>Formerly Consultant @ Ashurst, Data Scientist, etc.
               </p>
             </section>
 
