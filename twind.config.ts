@@ -1,9 +1,15 @@
-import { defineConfig } from "https://esm.sh/@twind/core@1.1.3";
-import presetTailwind from "https://esm.sh/@twind/preset-tailwind@1.1.4";
+import { Options } from "$fresh/plugins/twind.ts";
 
 export default {
-  ...defineConfig({
-    presets: [presetTailwind()],
-  }),
   selfURL: import.meta.url,
-};
+  theme: {
+    extend: {
+      colors: {
+        // You can customize your colors here
+      },
+    },
+  },
+  plugins: {
+    // Add any custom plugins here
+  },
+} as Options;
