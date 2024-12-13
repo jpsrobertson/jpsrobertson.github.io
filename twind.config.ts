@@ -5,11 +5,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        // You can customize your colors here
+        // Custom colors if needed
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: '#24292e',
+            a: {
+              color: '#0366d6',
+              textDecoration: 'none',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+            },
+          },
+        },
       },
     },
   },
-  plugins: {
-    // Add any custom plugins here
+  preflight: {
+    '@import': `url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap')`,
+    body: {
+      fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+    },
   },
 } as Options;
