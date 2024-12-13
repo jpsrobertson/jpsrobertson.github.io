@@ -90,7 +90,7 @@ export default function BlogPost(props: PageProps) {
       <>
         <Header />
         <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h1 class="text-2xl font-bold text-gray-900">Post not found</h1>
+          <h1 class="text-2xl font-bold text-slate-100">Post not found</h1>
         </main>
       </>
     );
@@ -104,26 +104,28 @@ export default function BlogPost(props: PageProps) {
         <title>{post.title} - Josh Robertson</title>
         <style>{`
           .markdown-body {
-            color: #24292e;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            color: rgb(226 232 240);
+            font-family: Sono, monospace;
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.6;
           }
-          .markdown-body h1 { font-size: 2em; margin: 0.67em 0; }
-          .markdown-body h2 { font-size: 1.5em; margin: 0.83em 0; }
-          .markdown-body h3 { font-size: 1.25em; margin: 1em 0; }
-          .markdown-body ul, .markdown-body ol { padding-left: 2em; margin: 1em 0; }
+          .markdown-body h1 { font-size: 2em; margin: 0.67em 0; color: rgb(241 245 249); font-family: "Noto Serif", serif; font-weight: 200; }
+          .markdown-body h2 { font-size: 1.5em; margin: 0.83em 0; color: rgb(241 245 249); font-family: "Noto Serif", serif; font-weight: 200; }
+          .markdown-body h3 { font-size: 1.25em; margin: 1em 0; color: rgb(241 245 249); font-family: "Noto Serif", serif; font-weight: 200; }
+          .markdown-body ul, .markdown-body ol { padding-left: 2em; margin: 1em 0; color: rgb(203 213 225); }
           .markdown-body li { margin: 0.25em 0; }
-          .markdown-body p { margin: 1em 0; }
+          .markdown-body p { margin: 1em 0; color: rgb(203 213 225); }
+          .markdown-body a { color: rgb(226 232 240); text-decoration: none; }
+          .markdown-body a:hover { color: rgb(241 245 249); text-decoration: underline; }
         `}</style>
       </Head>
-      <div class="min-h-screen bg-gray-50">
+      <div class="min-h-screen bg-slate-900">
         <Header />
         <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <article class="prose prose-lg mx-auto">
             <header class="text-center mb-8">
-              <h1 class="text-4xl font-bold text-gray-900">{post.title}</h1>
-              <time class="text-gray-500 mt-2 block">
+              <h1 class="text-4xl font-light text-slate-100 font-display">{post.title}</h1>
+              <time class="text-slate-400 mt-2 block font-sans">
                 {new Date(post.date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
@@ -131,7 +133,7 @@ export default function BlogPost(props: PageProps) {
                 })}
               </time>
             </header>
-            <div class="mt-8 bg-white rounded-xl shadow-sm p-8 markdown-body" 
+            <div class="mt-8 bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-700 markdown-body" 
                  dangerouslySetInnerHTML={{ __html: renderedContent }} />
           </article>
         </main>

@@ -4,43 +4,46 @@ export default {
   selfURL: import.meta.url,
   theme: {
     extend: {
-      colors: {
-        // Custom colors if needed
-      },
       fontFamily: {
         sans: ['Sono', 'monospace'],
-        display: ['"Playfair Display"', 'serif'],
+        display: ['"Noto Serif"', 'serif'],
       },
       typography: {
         DEFAULT: {
           css: {
             maxWidth: 'none',
-            color: '#24292e',
+            color: 'rgb(var(--slate-200))',
             h1: {
-              fontFamily: '"Playfair Display", serif',
-              fontWeight: '700',
+              fontFamily: '"Noto Serif", serif',
+              fontWeight: '200',
+              color: 'rgb(var(--slate-100))',
             },
             h2: {
-              fontFamily: '"Playfair Display", serif',
-              fontWeight: '600',
+              fontFamily: '"Noto Serif", serif',
+              fontWeight: '200',
+              color: 'rgb(var(--slate-100))',
             },
             h3: {
-              fontFamily: '"Playfair Display", serif',
-              fontWeight: '600',
+              fontFamily: '"Noto Serif", serif',
+              fontWeight: '200',
+              color: 'rgb(var(--slate-100))',
             },
             p: {
               fontFamily: 'Sono, monospace',
               fontWeight: '400',
+              color: 'rgb(var(--slate-300))',
             },
             li: {
               fontFamily: 'Sono, monospace',
               fontWeight: '400',
+              color: 'rgb(var(--slate-300))',
             },
             a: {
-              color: '#0366d6',
+              color: 'rgb(var(--slate-300))',
               textDecoration: 'none',
               fontFamily: 'Sono, monospace',
               '&:hover': {
+                color: 'rgb(var(--slate-100))',
                 textDecoration: 'underline',
               },
             },
@@ -50,11 +53,26 @@ export default {
     },
   },
   preflight: {
-    '@import': `url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Sono:wght@400;500;600&display=swap')`,
+    '@import': `url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@200;300&family=Sono:wght@400;500;600&display=swap')`,
+    ':root': {
+      '--slate-50': '248 250 252',
+      '--slate-100': '241 245 249',
+      '--slate-200': '226 232 240',
+      '--slate-300': '203 213 225',
+      '--slate-400': '148 163 184',
+      '--slate-500': '100 116 139',
+      '--slate-600': '71 85 105',
+      '--slate-700': '51 65 85',
+      '--slate-800': '30 41 59',
+      '--slate-900': '15 23 42',
+      '--slate-950': '2 6 23',
+    },
     body: {
       fontFamily: 'Sono, monospace',
       fontOpticalSizing: 'auto',
       fontVariationSettings: '"MONO" 1',
+      backgroundColor: 'rgb(var(--slate-900))',
+      color: 'rgb(var(--slate-200))',
     },
   },
 } as Options;

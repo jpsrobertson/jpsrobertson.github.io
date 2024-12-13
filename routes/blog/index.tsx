@@ -28,38 +28,37 @@ export default function BlogIndex() {
   return (
     <>
       <Head>
-        <title>Blog - Josh Robertson</title>
+        <title>Writings - Josh Robertson</title>
         <meta name="description" content="Thoughts on data science, consulting, product strategy, and economics" />
       </Head>
-      <div class="min-h-screen bg-gray-50">
+      <div class="min-h-screen bg-slate-900">
         <Header />
         <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div class="space-y-8">
             <section class="text-center">
-              <h1 class="text-4xl font-bold text-gray-900 font-display">Blog</h1>
-              <p class="mt-4 text-xl text-gray-600 font-sans font-medium">
+              <p class="mt-4 text-xl text-slate-300 font-sans font-medium">
                 Thoughts on data science, consulting, product strategy, and economics
               </p>
             </section>
 
             <div class="space-y-8">
               {posts.map((post) => (
-                <article key={post.slug} class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+                <article key={post.slug} class="bg-slate-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow border border-slate-700">
                   <a href={`/blog/${post.slug}`} class="block">
-                    <h2 class="text-2xl font-semibold text-gray-900 hover:text-gray-700 font-display">
+                    <h2 class="text-2xl font-semibold text-slate-100 hover:text-slate-200 font-display">
                       {post.title}
                     </h2>
-                    <time class="text-sm text-gray-500 mt-2 block font-sans font-normal">
+                    <time class="text-sm text-slate-400 mt-2 block font-sans font-normal">
                       {new Date(post.date).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
                       })}
                     </time>
-                    <p class="mt-3 text-gray-600 font-sans font-normal">
+                    <p class="mt-3 text-slate-300 font-sans font-normal">
                       {post.excerpt}
                     </p>
-                    <span class="inline-flex items-center mt-4 text-sm font-medium text-blue-600 hover:text-blue-500 font-sans">
+                    <span class="inline-flex items-center mt-4 text-sm font-medium text-slate-200 hover:text-slate-100 font-sans">
                       Read more →
                     </span>
                   </a>
