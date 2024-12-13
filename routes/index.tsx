@@ -14,8 +14,7 @@ export default function Home() {
           <div class="space-y-12">
             <section class="text-center">
               <h1 class="text-4xl font-bold text-slate-100 sm:text-5xl font-display">
-                Hi, I'm Josh Robertson
-              </h1>
+I'm Josh              </h1>
               <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto font-sans font-medium">
                 Data scientist, consultant, and product strategist with a strong foundation in economics.
               </p>
