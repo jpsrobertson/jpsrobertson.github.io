@@ -17,7 +17,11 @@ export default function Home() {
                   I'm Josh
               </h1>
               <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto font-sans">
-                Co-Founder of Columns. <p>We're building an app for simple data analysis.</p>Formerly Consultant @ Ashurst, Data Scientist, etc.
+                Co-Founder of  {" "}
+                <a href="https://usecolumns.com" class="text-slate-300 hover:text-slate-100">
+                  <img src="/icon3.svg" alt="Columns icon" class="w-4 h-4 inline-block ml-1 mb-[3px]" /> Columns
+                </a>. <p>
+                  We're building an app for simple data analysis.</p>Formerly Consultant @ Ashurst, Data Scientist, etc.
               </p>
             </section>
 
