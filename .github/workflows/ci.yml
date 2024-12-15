@@ -32,7 +32,7 @@ jobs:
         run: |
           deno task build
           mkdir -p dist
-          cp -r build/* dist/ || true
+          cp -r _fresh/* dist/ || true
           cp -r static/* dist/ || true
           cp .nojekyll dist/
           echo "jpsrobertson.github.io" > dist/CNAME
