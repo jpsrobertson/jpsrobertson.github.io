@@ -25,14 +25,26 @@ jobs:
         with:
           deno-version: "1.37.1"
 
+      - name: Install Fresh CLI
+        run: deno install -A -f -n fresh https://deno.land/x/fresh@1.5.4/fresh.ts
+
       - name: Build Fresh Site
         run: |
-          deno run -A dev.ts build
+          deno task build
+          ls -la
           mkdir -p dist
           cp -r build/* dist/ || true
           cp -r static/* dist/ || true
           touch dist/.nojekyll
           echo "jpsrobertson.github.io" > dist/CNAME
+          ls -la dist
+
+      - name: List Build Output
+        run: |
+          echo "Contents of dist directory:"
+          ls -la dist/
+          echo "Contents of current directory:"
+          ls -la
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
