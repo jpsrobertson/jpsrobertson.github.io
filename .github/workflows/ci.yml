@@ -1,9 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (Backup)
 
 on:
   push:
     branches:
-      - main
       - master
 
 permissions:
