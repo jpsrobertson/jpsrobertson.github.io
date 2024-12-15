@@ -25,12 +25,15 @@ jobs:
         with:
           deno-version: "1.37.1"
 
+      - name: Install Fresh CLI
+        run: deno install -A -f https://deno.land/x/fresh@1.5.4/cli.ts
+
       - name: Create .nojekyll file
         run: touch .nojekyll
 
       - name: Build Site
         run: |
-          deno task build
+          deno run -A dev.ts build
           mkdir -p dist
           cp -r _fresh/* dist/ || true
           cp -r static/* dist/ || true
