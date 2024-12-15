@@ -7,10 +7,15 @@ export default function Home() {
       <Head>
         <title>Josh Robertson - Data, Consulting & Product Expert</title>
         <meta name="description" content="Personal website of Josh Robertson - Expert in Data, Consulting, Product, and Economics" />
+        <style>{`
+          body {
+            background-color: rgb(15 23 42);
+          }
+        `}</style>
       </Head>
-      <div class="min-h-screen bg-slate-900 flex flex-col">
+      <div class="min-h-screen">
         <Header />
-        <main class="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-8">
+        <main class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-8">
           <div class="space-y-12">
             <section class="text-center">
               <h1 class="font-bold text-slate-100 sm:text-4xl font-display">
@@ -25,7 +30,7 @@ export default function Home() {
               </p>
             </section>
 
-            <section class="bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-700">
+            <section class="bg-slate-800/50 rounded-xl shadow-lg p-8 border border-slate-700">
               <h2 class="text-2xl font-semibold text-slate-100 mb-6 font-display">About Me</h2>
               <div class="prose prose-lg max-w-none text-slate-300 font-sans space-y-6">
                 <p class="font-normal">
