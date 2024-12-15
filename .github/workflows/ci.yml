@@ -25,14 +25,15 @@ jobs:
       - name: Setup Deno
         uses: denoland/setup-deno@v1
         with:
-          deno-version: v1.x
+          deno-version: "1.37.1"
 
       - name: Build Fresh Site
         run: |
-          deno task build
+          deno run -A dev.ts build
           mkdir -p _site
           cp -r ./_fresh/* _site/ || true
           cp -r ./static/* _site/ || true
+          echo "jpsrobertson.github.io" > _site/CNAME
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
