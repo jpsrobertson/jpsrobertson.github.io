@@ -30,13 +30,7 @@ jobs:
 
       - name: Build Site
         run: |
-          deno run -A -r https://deno.land/x/fresh@1.5.4/dev.ts build
-          mkdir -p dist
-          cp -r _fresh/* dist/ || true
-          cp -r static/* dist/ || true
-          cp .nojekyll dist/
-          echo "jpsrobertson.github.io" > dist/CNAME
-          ls -la dist
+          deno task build
 
       - name: List Build Output
         run: |
