@@ -25,14 +25,16 @@ jobs:
         with:
           deno-version: "1.37.1"
 
-      - name: Build Fresh Site
+      - name: Create .nojekyll file
+        run: touch .nojekyll
+
+      - name: Build Site
         run: |
           deno task build
-          ls -la
           mkdir -p dist
           cp -r build/* dist/ || true
           cp -r static/* dist/ || true
-          touch dist/.nojekyll
+          cp .nojekyll dist/
           echo "jpsrobertson.github.io" > dist/CNAME
           ls -la dist
 
@@ -50,6 +52,7 @@ jobs:
           publish_dir: ./dist
           publish_branch: gh-pages
           force_orphan: true
+          enable_jekyll: false
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'Deploy to GitHub Pages'
