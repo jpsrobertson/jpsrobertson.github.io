@@ -25,9 +25,6 @@ jobs:
         with:
           deno-version: "1.37.1"
 
-      - name: Install Fresh CLI
-        run: deno install -A -f -n fresh https://deno.land/x/fresh@1.5.4/fresh.ts
-
       - name: Build Fresh Site
         run: |
           deno task build
