@@ -31,9 +31,8 @@ jobs:
         run: |
           deno run -A dev.ts build
           mkdir -p _site
-          cp -r ./_fresh/* _site/ || true
-          cp -r ./static/* _site/ || true
-          echo "jpsrobertson.github.io" > _site/CNAME
+          cp -r build/* _site/ || true
+          cp -r static/* _site/ || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
