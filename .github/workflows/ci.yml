@@ -12,12 +12,10 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
+    concurrency: ci-${{ github.ref }}
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,18 +28,19 @@ jobs:
       - name: Build Fresh Site
         run: |
           deno run -A dev.ts build
-          mkdir -p _site
-          cp -r build/* _site/ || true
-          cp -r static/* _site/ || true
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: '_site'
+          mkdir -p dist
+          cp -r build/* dist/ || true
+          cp -r static/* dist/ || true
+          touch dist/.nojekyll
+          echo "jpsrobertson.github.io" > dist/CNAME
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy to GitHub Pages'

@@ -1,17 +1,26 @@
-# fresh project
+# Josh Robertson
 
-The basic Deno Fresh template, with working Tailwind V3+, through the Twind V1+. Uses the official Deno Fresh Twind v1 plugin. 
+My personal website built with Deno Fresh and Tailwind CSS. Visit [jpsrobertson.github.io](https://jpsrobertson.github.io) to see it live.
 
-The main change is to rename `$fresh/plugins/twind.ts` to `twindv1.ts` in the `main.ts`. And use the `@twind/core`'s `defineConfig` in the twind.config.ts
+## About
 
-The other change is that the import map is inside the `deno.json` file.
+This is my personal website where I share my thoughts on data science, economics, and technology. Built using:
 
-### Usage
+- Deno Fresh for static site generation
+- Tailwind CSS for styling
+- GitHub Pages for hosting
 
-Start the project:
+## Development
 
-```
+To run locally:
+
+```bash
+# Start the development server
 deno task start
-```
 
-This will watch the project directory and restart as necessary.
+# Build the site
+deno task build
+
+# Preview the built site
+deno task preview
+```
