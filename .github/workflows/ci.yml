@@ -1,30 +1,33 @@
-name: gh-pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
+      - main
       - master
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup deno
-        uses: denolib/setup-deno@v2
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
         with:
-          deno-version: v1.7.0
+          deno-version: v1.x
 
-      - name: Build gh-pages
+      - name: Build Fresh Site
         run: |
-          deno --version
-          deno install --unstable --allow-read --allow-write --allow-net --allow-env --allow-run --name=pagic https://deno.land/x/pagic@v1.6.3/mod.ts
-          pagic build
+          deno task build
+          mkdir -p _site
+          cp -r ./_fresh/* _site/
+          cp -r ./static/* _site/ || true
 
-      - name: Deploy gh-pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: _site
           cname: jpsrobertson.github.io
